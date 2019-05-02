@@ -380,7 +380,7 @@ switch(minute){
   break;
   case 13:
     digit3(1);
-    digit4(4);
+    digit4(3);
   break;
   case 14:
     digit3(1);
