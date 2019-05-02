@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <FastLED.h>
-#include "RTCLib.h"
+#include "RTClib.h"
 
 //Define led settings
 #define NUM_LEDS 30
