@@ -570,4 +570,5 @@ switch(minute){
 
 
   FastLED.show();
+  delay(500);
 }
