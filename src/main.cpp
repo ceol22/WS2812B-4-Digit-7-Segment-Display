@@ -224,7 +224,8 @@ void loop() {
   int hour = now.hour();
   int minute = now.minute();
 
-  fill_solid( leds, NUM_LEDS, CRGB::Red);  // Set color
+  //fill_solid( leds, NUM_LEDS, CRGB::Green);  // Set color
+  fill_rainbow( leds, NUM_LEDS, 0, 8);
 
   switch(hour){
     case 0:
