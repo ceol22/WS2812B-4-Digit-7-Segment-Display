@@ -17,6 +17,8 @@ void setup() {
     FastLED.setBrightness(BRIGHTNESS);
 }
 
+//Functions for deciding which leds have to turn off based on the number
+
 void digit1(int num1){
   switch(num1){
     case 0:
