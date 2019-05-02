@@ -187,7 +187,7 @@ void digit4(int num4){
        leds[28] = CRGB::Black;
     break;
     case 2:
-       leds[25] = CRGB::Black;
+       leds[23] = CRGB::Black;
        leds[29] = CRGB::Black;
     break;
     case 3:
