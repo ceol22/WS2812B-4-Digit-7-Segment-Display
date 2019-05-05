@@ -6,14 +6,17 @@
 #define NUM_LEDS 30
 #define DATA_PIN 6
 #define BRIGHTNESS 255
+#define FADEDELAY 100
 
 
 
 // Define the array of leds
 CRGB leds[NUM_LEDS];
 
+// Name the RTC : rtc
 RTC_DS3231 rtc;
 
+//define ghue for rainbow fade effect
 uint8_t gHue = 0;
 
 
@@ -28,12 +31,13 @@ Serial.begin(9600);
 
 delay(3000); // wait for console opening
 
-if (! rtc.begin()) {
+
+if (! rtc.begin()) {  //Enable the RTC
   Serial.println("Couldn't find RTC");
   while (1);
 }
 
-if (rtc.lostPower()) {
+if (rtc.lostPower()) { // Notify when RTC lost power
   Serial.println("RTC lost power, lets set the time!");
   rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 }
@@ -228,25 +232,23 @@ void loop() {
   int potVal = analogRead(1);
 
   Serial.println(potVal);
-  if(potVal <100){
-    int pos = beatsin16(5,0,192); // generating the sinwave
-      fill_solid(leds, NUM_LEDS, CHSV( gHue, 255, 255)); // remove pos
+  if(potVal <100){ // IF potentiometer left: Rainbow Fade
 
-      EVERY_N_MILLISECONDS(50) {gHue++;}
+      fill_solid(leds, NUM_LEDS, CHSV( gHue, 255, 255));
+      EVERY_N_MILLISECONDS(FADEDELAY) {gHue++;}
   }
 
-  if(potVal >= 100 && potVal <= 900 ){
+  if(potVal >= 100 && potVal <= 900 ){ // Map center of potentiometer to the colorspectrum
     int hsvcolor = map(potVal,100,900,0,255);
     fill_solid( leds, NUM_LEDS, CHSV(hsvcolor, 255, 255));
   }
 
-  if(potVal >= 900){
+  if(potVal >= 900){  // IF potentiometer Right fill with Rainbow
     fill_rainbow( leds, NUM_LEDS, 0, 8);
 
   }
-  //fill_solid( leds, NUM_LEDS, CRGB::Green);  // Set color
-  //fill_rainbow( leds, NUM_LEDS, 0, 8);
 
+ // set for every minute and hour which leds should be off
   switch(hour){
     case 0:
       digit1(0);
