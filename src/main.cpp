@@ -228,16 +228,21 @@ void loop() {
   int potVal = analogRead(1);
 
   Serial.println(potVal);
-  if(potVal <= 100){
+  if(potVal <100){
     int pos = beatsin16(5,0,192); // generating the sinwave
       fill_solid(leds, NUM_LEDS, CHSV( gHue, 255, 255)); // remove pos
 
       EVERY_N_MILLISECONDS(50) {gHue++;}
   }
 
-  if(potVal >= 100){
-    int hsvcolor = map(potVal,100,1023,0,255);
+  if(potVal >= 100 && potVal <= 900 ){
+    int hsvcolor = map(potVal,100,900,0,255);
     fill_solid( leds, NUM_LEDS, CHSV(hsvcolor, 255, 255));
+  }
+
+  if(potVal >= 900){
+    fill_rainbow( leds, NUM_LEDS, 0, 8);
+
   }
   //fill_solid( leds, NUM_LEDS, CRGB::Green);  // Set color
   //fill_rainbow( leds, NUM_LEDS, 0, 8);
