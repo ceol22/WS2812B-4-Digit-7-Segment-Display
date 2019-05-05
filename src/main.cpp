@@ -14,6 +14,8 @@ CRGB leds[NUM_LEDS];
 
 RTC_DS3231 rtc;
 
+uint8_t gHue = 0;
+
 
 void setup() {
   // Add the leds to FastLED
@@ -223,9 +225,22 @@ void loop() {
   DateTime now = rtc.now();
   int hour = now.hour();
   int minute = now.minute();
+  int potVal = analogRead(1);
 
+  Serial.println(potVal);
+  if(potVal <= 100){
+    int pos = beatsin16(5,0,192); // generating the sinwave
+      fill_solid(leds, NUM_LEDS, CHSV( gHue, 255, 255)); // remove pos
+
+      EVERY_N_MILLISECONDS(50) {gHue++;}
+  }
+
+  if(potVal >= 100){
+    int hsvcolor = map(potVal,100,1023,0,255);
+    fill_solid( leds, NUM_LEDS, CHSV(hsvcolor, 255, 255));
+  }
   //fill_solid( leds, NUM_LEDS, CRGB::Green);  // Set color
-  fill_rainbow( leds, NUM_LEDS, 0, 8);
+  //fill_rainbow( leds, NUM_LEDS, 0, 8);
 
   switch(hour){
     case 0:
@@ -571,5 +586,5 @@ switch(minute){
 
 
   FastLED.show();
-  delay(500);
+
 }
