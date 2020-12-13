@@ -1,0 +1,75 @@
+{
+    "configurations": [
+        {
+            "name": "!!! WARNING !!! AUTO-GENERATED FILE, PLEASE DO NOT MODIFY IT AND USE https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "x:/Documents/Github/WS2812B-4-Digit-7-Segment-Display/include",
+                "x:/Documents/Github/WS2812B-4-Digit-7-Segment-Display/src",
+                "C:/Users/jordy/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/jordy/.platformio/packages/framework-arduino-avr/variants/standard",
+                "C:/Users/jordy/.platformio/lib/Adafruit FONA Library",
+                "C:/Users/jordy/.platformio/lib/Adafruit MQTT Library",
+                "C:/Users/jordy/.platformio/lib/Adafruit SleepyDog Library",
+                "C:/Users/jordy/.platformio/lib/Adafruit SleepyDog Library/utility",
+                "C:/Users/jordy/.platformio/lib/Adafruit Unified Sensor",
+                "C:/Users/jordy/.platformio/lib/DHT sensor library",
+                "C:/Users/jordy/.platformio/lib/LiquidCrystal_I2C",
+                "C:/Users/jordy/.platformio/lib/MFRC522/src",
+                "C:/Users/jordy/.platformio/lib/WiFi101/src",
+                "C:/Users/jordy/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "C:/Users/jordy/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "C:/Users/jordy/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/jordy/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "C:/Users/jordy/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "C:/Users/jordy/.platformio/packages/tool-unity",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "x:/Documents/Github/WS2812B-4-Digit-7-Segment-Display/include",
+                    "x:/Documents/Github/WS2812B-4-Digit-7-Segment-Display/src",
+                    "C:/Users/jordy/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/jordy/.platformio/packages/framework-arduino-avr/variants/standard",
+                    "C:/Users/jordy/.platformio/lib/Adafruit FONA Library",
+                    "C:/Users/jordy/.platformio/lib/Adafruit MQTT Library",
+                    "C:/Users/jordy/.platformio/lib/Adafruit SleepyDog Library",
+                    "C:/Users/jordy/.platformio/lib/Adafruit SleepyDog Library/utility",
+                    "C:/Users/jordy/.platformio/lib/Adafruit Unified Sensor",
+                    "C:/Users/jordy/.platformio/lib/DHT sensor library",
+                    "C:/Users/jordy/.platformio/lib/LiquidCrystal_I2C",
+                    "C:/Users/jordy/.platformio/lib/MFRC522/src",
+                    "C:/Users/jordy/.platformio/lib/WiFi101/src",
+                    "C:/Users/jordy/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "C:/Users/jordy/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "C:/Users/jordy/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/jordy/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "C:/Users/jordy/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "C:/Users/jordy/.platformio/packages/tool-unity",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=50003",
+                "ARDUINO_AVR_UNO",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega328P__",
+                ""
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "compilerPath": "C:/Users/jordy/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=atmega328p",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
